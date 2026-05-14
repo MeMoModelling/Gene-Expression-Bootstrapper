@@ -59,7 +59,7 @@ def write_up(f, d):
     return path
 
 def schema_expander(title, columns, notes=""):
-    with st.expander(f"ℹ️ **Expected format: {title}**"):
+    with st.expander(f"**Expected format: {title}**"):
         rows = [{"Column": f"`{c['name']}`", "Type": c["type"],
                  "Required": "Yes" if c["required"] else "Optional",
                  "Description": c["description"]} for c in columns]
