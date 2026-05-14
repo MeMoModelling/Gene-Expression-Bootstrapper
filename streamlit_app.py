@@ -172,9 +172,9 @@ with col1:
     schema_expander("Prefixed Models (.xlsx)", [
         {"name": "Reactions sheet", "type": "sheet", "required": True,
          "description": "Must contain 'system' and 'genes' columns. Output of Step 5 (Community Assembly) of the pipeline — the species-prefixed model files, not combined_graph.xlsx."},
-    ], notes="One file per species. Upload in the same order as your mapping files.")
+    ], notes="One file per species in the same order as your mapping files. e.g. LC_model.xlsx, LLm1_model.xlsx")
     model_files = st.file_uploader(
-        "Prefixed model files — e.g. LC_model.xlsx, LLm1_model.xlsx",
+        "Prefixed model files (.xlsx)",
         accept_multiple_files=True,
         key="model_upload"
     )
@@ -183,9 +183,9 @@ with col2:
     schema_expander("Identifier Mappings (.xlsx)", [
         {"name": "Model sheet", "type": "sheet", "required": True,
          "description": "Must contain 'model_tag', 'gene_id', and 'has_mapping' columns. Output of Step 3 (Gene to Genome Annotation) of the pipeline."},
-    ], notes="One file per species, in the same order as the model files.")
+    ], notes="One file per species in the same order as the model files. e.g. LC_mapping.xlsx, LLm1_mapping.xlsx")
     mapping_files = st.file_uploader(
-        "Identifier mapping files — e.g. LC_mapping.xlsx, LLm1_mapping.xlsx",
+        "Identifier mapping files (.xlsx)",
         accept_multiple_files=True,
         key="mapping_upload"
     )
