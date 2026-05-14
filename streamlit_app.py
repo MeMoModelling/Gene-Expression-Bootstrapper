@@ -75,10 +75,12 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
 
-html, body, [class*="css"] {
+html, body, [class*="css"], .stApp {
     font-family: 'DM Sans', sans-serif !important;
     font-size: 16px !important;
+    background-color: #f7f7f5 !important;
 }
+.main .block-container { background-color: #f7f7f5 !important; }
 .main .block-container {
     padding: 2.5rem 3.5rem 4rem 3.5rem !important;
     max-width: 1080px !important;
@@ -201,7 +203,7 @@ with col1:
          "description": "Must contain 'system' and 'genes' columns. Output of Step 5 (Community Assembly) of the pipeline — the species-prefixed model files, not combined_graph.xlsx."},
     ], notes="One file per species. Upload in the same order as your mapping files.")
     model_files = st.file_uploader(
-        "Prefixed model files — e.g. LC_model.xlsx, LLm1_model.xlsx (.xlsx)",
+        "Prefixed model files — e.g. LC_model.xlsx, LLm1_model.xlsx",
         accept_multiple_files=True,
         key="model_upload"
     )
@@ -212,7 +214,7 @@ with col2:
          "description": "Must contain 'model_tag', 'gene_id', and 'has_mapping' columns. Output of Step 3 (Gene to Genome Annotation) of the pipeline."},
     ], notes="One file per species, in the same order as the model files.")
     mapping_files = st.file_uploader(
-        "Identifier mapping files — e.g. LC_mapping.xlsx, LLm1_mapping.xlsx (.xlsx)",
+        "Identifier mapping files — e.g. LC_mapping.xlsx, LLm1_mapping.xlsx",
         accept_multiple_files=True,
         key="mapping_upload"
     )
