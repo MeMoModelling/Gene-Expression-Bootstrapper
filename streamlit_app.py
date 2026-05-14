@@ -75,12 +75,10 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
 
-html, body, [class*="css"], .stApp {
+html, body, [class*="css"] {
     font-family: 'DM Sans', sans-serif !important;
     font-size: 16px !important;
-    background-color: #f7f7f5 !important;
 }
-.main .block-container { background-color: #f7f7f5 !important; }
 .main .block-container {
     padding: 2.5rem 3.5rem 4rem 3.5rem !important;
     max-width: 1080px !important;
@@ -98,7 +96,6 @@ h2, h3 {
     font-weight: 700 !important;
     letter-spacing: -0.5px !important;
 }
-
 .stButton > button[kind="primary"] {
     background: #006d5b !important;
     color: #ffffff !important;
@@ -111,52 +108,28 @@ h2, h3 {
 }
 .stButton > button[kind="primary"]:hover { background: #005548 !important; }
 .stButton > button:not([kind="primary"]) {
-    background: #fff !important;
-    color: #0d0d0d !important;
-    border: 1.5px solid #d0d0d0 !important;
     border-radius: 4px !important;
     font-size: 14px !important;
     font-family: 'DM Sans', sans-serif !important;
 }
 .stDownloadButton > button {
-    background: #fff !important;
-    color: #0d0d0d !important;
-    border: 1.5px solid #d0d0d0 !important;
     border-radius: 4px !important;
     font-size: 14px !important;
     font-family: 'DM Sans', sans-serif !important;
     font-weight: 500 !important;
 }
-.stDownloadButton > button:hover {
-    border-color: #0d0d0d !important;
-    background: #f5f5f5 !important;
-}
 [data-testid="stFileUploader"] {
-    background: #fff !important;
-    border: 2px dashed #d0d0d0 !important;
     border-radius: 6px !important;
     padding: 0.4rem !important;
-}
-[data-testid="stFileUploader"]:hover { border-color: #0d0d0d !important; }
-[data-testid="stFileUploader"] *,
-[data-testid="stFileUploaderDropzone"],
-section[data-testid="stFileUploaderDropzone"] {
-    background: #fff !important;
-    color: #333 !important;
 }
 [data-testid="stTextInput"] input,
 [data-testid="stTextArea"] textarea,
 [data-testid="stNumberInput"] input {
     font-family: 'DM Sans', sans-serif !important;
     border-radius: 4px !important;
-    border: 1.5px solid #d0d0d0 !important;
-    background: #fff !important;
-    color: #0d0d0d !important;
 }
 [data-testid="stExpander"] {
-    border: 1.5px solid #e8e8e8 !important;
     border-radius: 6px !important;
-    background: #fff !important;
 }
 [data-testid="stAlert"] {
     border-radius: 6px !important;
@@ -165,11 +138,9 @@ section[data-testid="stFileUploaderDropzone"] {
 code, pre {
     font-family: 'DM Mono', monospace !important;
     font-size: 13px !important;
-    background: #0d0d0d !important;
-    color: #f0f0f0 !important;
     border-radius: 6px !important;
 }
-hr { border-color: #e8e8e8 !important; margin: 1.5rem 0 !important; }
+hr { margin: 1.5rem 0 !important; }
 .stSpinner > div { border-top-color: #006d5b !important; }
 </style>
 """, unsafe_allow_html=True)
