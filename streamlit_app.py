@@ -96,15 +96,7 @@ h2, h3 {
     font-weight: 700 !important;
     letter-spacing: -0.5px !important;
 }
-[data-testid="stSidebar"] {
-    background-color: #0d0d0d !important;
-    border-right: none !important;
-}
-[data-testid="stSidebar"] * {
-    font-family: 'DM Sans', sans-serif !important;
-    color: #e0e0e0 !important;
-    font-size: 14px !important;
-}
+
 .stButton > button[kind="primary"] {
     background: #006d5b !important;
     color: #ffffff !important;
@@ -188,23 +180,10 @@ for k, v in [("result_zip", None), ("log_lines", [])]:
         st.session_state[k] = v
 
 # ==========================================
-# SIDEBAR
-# ==========================================
-st.sidebar.title("Gene Expression Bootstrapping")
-st.sidebar.markdown("---")
-st.sidebar.markdown(
-    "This tool imputes expression values for genes missing from the RNA-seq data — "
-    "either because they could not be mapped to the reference genome, or because they "
-    "represent enzymatic reactions without associated genes."
-)
-st.sidebar.markdown("---")
-st.sidebar.markdown("**Output:** `geneExpr_1.csv` … `geneExpr_N.csv` — one file per bootstrap batch, packaged as a ZIP.")
-
-# ==========================================
 # MAIN
 # ==========================================
 st.title("Gene Expression Bootstrapping")
-st.caption(
+st.markdown(
     "Imputes expression values for unmapped and unknown genes using bootstrapping. "
     "Output files serve as the geneExpr folder input for FEA."
 )
@@ -222,7 +201,7 @@ with col1:
          "description": "Must contain 'system' and 'genes' columns. Output of Step 5 (Community Assembly) of the pipeline — the species-prefixed model files, not combined_graph.xlsx."},
     ], notes="One file per species. Upload in the same order as your mapping files.")
     model_files = st.file_uploader(
-        "Prefixed model files (.xlsx)",
+        "Prefixed model files — e.g. LC_model.xlsx, LLm1_model.xlsx (.xlsx)",
         accept_multiple_files=True,
         key="model_upload"
     )
@@ -233,7 +212,7 @@ with col2:
          "description": "Must contain 'model_tag', 'gene_id', and 'has_mapping' columns. Output of Step 3 (Gene to Genome Annotation) of the pipeline."},
     ], notes="One file per species, in the same order as the model files.")
     mapping_files = st.file_uploader(
-        "Identifier mapping files (.xlsx)",
+        "Identifier mapping files — e.g. LC_mapping.xlsx, LLm1_mapping.xlsx (.xlsx)",
         accept_multiple_files=True,
         key="mapping_upload"
     )
