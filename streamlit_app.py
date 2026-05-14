@@ -174,9 +174,10 @@ with col1:
          "description": "Must contain 'system' and 'genes' columns. Output of Step 5 (Community Assembly) of the pipeline — the species-prefixed model files, not combined_graph.xlsx."},
     ], notes="One file per species in the same order as your mapping files. e.g. LC_model.xlsx, LLm1_model.xlsx")
     model_files = st.file_uploader(
-        "Prefixed model files (.xlsx)",
+        "model",
         accept_multiple_files=True,
-        key="model_upload"
+        key="model_upload",
+        label_visibility="collapsed"
     )
 
 with col2:
@@ -185,9 +186,10 @@ with col2:
          "description": "Must contain 'model_tag', 'gene_id', and 'has_mapping' columns. Output of Step 3 (Gene to Genome Annotation) of the pipeline."},
     ], notes="One file per species in the same order as the model files. e.g. LC_mapping.xlsx, LLm1_mapping.xlsx")
     mapping_files = st.file_uploader(
-        "Identifier mapping files (.xlsx)",
+        "mapping",
         accept_multiple_files=True,
-        key="mapping_upload"
+        key="mapping_upload",
+        label_visibility="collapsed"
     )
 
 schema_expander("Gene Expression CSV (combined_geneExpr.csv)", [
