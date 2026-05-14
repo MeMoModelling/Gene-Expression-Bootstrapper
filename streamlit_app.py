@@ -199,8 +199,9 @@ schema_expander("Gene Expression CSV (combined_geneExpr.csv)", [
      "description": "One column per sample (e.g. 'mLC-1', 'mLC-2'). Values are normalised expression counts."},
 ], notes="Combined across all species and all samples. Row index is gene ID.")
 gene_expr_file = st.file_uploader(
-    "Combined gene expression file (combined_geneExpr.csv)",
-    key="geneexpr_upload"
+    "geneexpr",
+    key="geneexpr_upload",
+    label_visibility="collapsed"
 )
 
 st.markdown("---")
