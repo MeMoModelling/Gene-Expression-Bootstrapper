@@ -144,6 +144,11 @@ hr { margin: 1.5rem 0 !important; }
 .stSpinner > div { border-top-color: #006d5b !important; }
 [data-testid="stFileUploaderDropzoneInstructions"] div:last-child { display: none !important; }
 [data-testid="stFileUploaderDropzone"] small { display: none !important; }
+[data-testid="stNumberInput"] label,
+[data-testid="stTextInput"] label,
+[data-testid="stSelectbox"] label,
+[data-testid="stFileUploader"] label,
+p, li, span, div, label { font-size: 16px !important; }
 </style>
 """, unsafe_allow_html=True)
 
