@@ -102,19 +102,19 @@ h2, h3 {
     border: none !important;
     border-radius: 4px !important;
     padding: 0.6rem 1.8rem !important;
-    font-size: 15px !important;
+    font-size: 16px !important;
     font-weight: 700 !important;
     font-family: 'DM Sans', sans-serif !important;
 }
 .stButton > button[kind="primary"]:hover { background: #005548 !important; }
 .stButton > button:not([kind="primary"]) {
     border-radius: 4px !important;
-    font-size: 14px !important;
+    font-size: 16px !important;
     font-family: 'DM Sans', sans-serif !important;
 }
 .stDownloadButton > button {
     border-radius: 4px !important;
-    font-size: 14px !important;
+    font-size: 16px !important;
     font-family: 'DM Sans', sans-serif !important;
     font-weight: 500 !important;
 }
@@ -137,7 +137,7 @@ h2, h3 {
 }
 code, pre {
     font-family: 'DM Mono', monospace !important;
-    font-size: 13px !important;
+    font-size: 16px !important;
     border-radius: 6px !important;
 }
 hr { margin: 1.5rem 0 !important; }
