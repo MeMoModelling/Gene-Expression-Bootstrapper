@@ -1,4 +1,4 @@
-# bootstrapModelExpression
+# App for bootstrapping missing gene expressions in genome-scale metabolic model (GEM)
 For metabolic flux modelling using the MeMo technology, this tool bootstraps missing gene expressions in metatranscriptomics data from similar subsystems/pathways.
 Missing expressions can be due to poor: 
 
