@@ -2,10 +2,19 @@ import argparse
 import ast
 import libsbml
 import os
+import re
 import numpy as np
 import pandas as pd
 import sys
 from utils.utils import *
+
+def extract_genes_from_gpa(gpa_str):
+    """Extract all gene IDs from a gpaAssociation string (e.g. 'G_A or (G_B and G_C)')."""
+    if pd.isna(gpa_str) or str(gpa_str).strip() == "":
+        return []
+    tokens = re.findall(r'[A-Za-z_]\w*', str(gpa_str))
+    keywords = {'or', 'and', 'not'}
+    return [t for t in tokens if t.lower() not in keywords]
 
 def read_combined_geneExpr(combined_geneExpr_filename):
     if not os.path.isfile(combined_geneExpr_filename):
@@ -19,11 +28,27 @@ def is_real_gene_with_mapping(gene):
 def read_system_gene(model_pre_filename):
     rxn_df = read_model_excel(model_pre_filename, "Reactions")
 
+    # Support 'genes' (stringified-list format) or fall back to 'gpaAssociation' (string format)
+    if "genes" in rxn_df.columns:
+        gene_col = "genes"
+        use_ast = True
+    elif "gpaAssociation" in rxn_df.columns:
+        gene_col = "gpaAssociation"
+        use_ast = False
+    else:
+        raise ValueError(
+            "Reactions sheet must have a 'genes' or 'gpaAssociation' column — "
+            f"columns found: {list(rxn_df.columns)}"
+        )
+
     system_genes_dict = {}
     missing_gene_system_dict = {}
     all_genes_set = set()
-    for system, gene_list in zip(rxn_df["system"], rxn_df["genes"]):
-        gene_list = ast.literal_eval(gene_list)
+    for system, gene_list_raw in zip(rxn_df["system"], rxn_df[gene_col]):
+        if use_ast:
+            gene_list = ast.literal_eval(gene_list_raw)
+        else:
+            gene_list = extract_genes_from_gpa(gene_list_raw)
 
         if system != "" and system not in system_genes_dict:
             system_genes_dict[system] = set()
