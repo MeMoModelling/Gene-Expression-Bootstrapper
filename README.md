@@ -5,9 +5,9 @@ Missing expressions can be due to poor:
 1. Coverage of lower-abundance species OR
 2. Reference genome annotation
 
-## Open in Google Colab
+## Open in Hugging Face
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MeMoModelling/Gene-Expression-Bootstrapper/blob/main/bootstrap_genes.ipynb)
+[![Open in Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Hugging%20Face-FFD21E)](https://huggingface.co/spaces/MeMoModelling/gene-expression-bootstrapper)
 
 # Licensing
 This software is Copyright (c) 2026. All rights reserved.
@@ -19,4 +19,3 @@ Commercial: Prohibited without an explicit license from the author.
 Collaboration: Academic researchers are prohibited from using this code in collaborative research with commercial companies.
 
 Please see the LICENSE file for the full terms and disclaimer of warranty.
-
