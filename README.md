@@ -7,9 +7,9 @@ Missing expressions can be due to poor:
 1. Coverage of lower-abundance species
 2. Reference genome annotation
 
-## Open in Google Colab
+## Open in Hugging Face
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MeMoModelling/Gene-Expression-Bootstrapper/blob/main/bootstrap_genes.ipynb)
+[![Open in Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Open%20in%20Hugging%20Face-FFD21E)](https://huggingface.co/spaces/MeMoModelling/gene-expression-bootstrapper)
 
 ## Licensing
 
