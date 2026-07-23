@@ -1,0 +1,4 @@
+interface:
+  display_name: "Maintain Gene Expression Bootstrapper"
+  short_description: "Run, test, debug, and deploy the bootstrapper"
+  default_prompt: "Use $maintain-gene-expression-bootstrapper to work on this application safely."
